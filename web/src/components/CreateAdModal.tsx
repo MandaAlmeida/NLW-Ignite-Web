@@ -88,7 +88,7 @@ export function CreateAdModal(){
                         </div>
                         <div  className="flex flex-col gap-2">
                         <label htmlFor="discord">Qual seu Discord?</label>
-                        <Input id="discord" name='discord' placeholder="Usuario#0000"/>
+                        <Input id="discord" name='discord' placeholder="Usuário#0000"/>
                         </div>
                         </div>
                         <div className="flex gap-6">
