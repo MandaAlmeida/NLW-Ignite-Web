@@ -1,12 +1,12 @@
 import { Home } from "./Pages/Home"
-import { Nav } from "./routes"
+
 
 function App() {
    
  
  return (
     <div>
-        <Nav />
+        <Home />
     </div>
 
  )
