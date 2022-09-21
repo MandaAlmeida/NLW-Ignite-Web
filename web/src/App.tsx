@@ -1,4 +1,4 @@
-import { Home } from "./Pages/Home"
+
 import { Nav } from "./routes"
 
 function App() {
