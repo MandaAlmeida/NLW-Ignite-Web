@@ -4,7 +4,6 @@
   "description": "",
   "main": "scr/server.js",
   "scripts": {
-    "build": "tsc",
     "dev": "nodemon src/server.ts",
     "vercel-build": "npx prisma migrate deploy"
   },
