@@ -57,19 +57,22 @@ export function CreateAdModal() {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed">
-        <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
-          <Dialog.Title className="text-3xl font-black ">
+        <Dialog.Content className="fixed bg-[#2A2634] lg:py-8 lg:px-10 sm:p-4 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg lg:w-[480px] sm:w-full shadow-lg shadow-black/25 overflow-auto">
+          <Dialog.Title className="lg:text-3xl sm:text-lg font-black ">
             Publique um anúncio
           </Dialog.Title>
-          <form onSubmit={handleCreateAd} className="mt-8 flex flex-col gap-4">
+          <form
+            onSubmit={handleCreateAd}
+            className="mt-8 flex flex-col lg:gap-4 sm:gap-2"
+          >
             <div className="flex flex-col gap-2">
-              <label className="font-semibold" htmlFor="game">
+              <label className="font-semibold sm:text-sm" htmlFor="game">
                 Qual o game?
               </label>
               <select
                 id="game"
                 name="game"
-                className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500"
+                className="bg-zinc-900 lg:py-3 lg:px-4 sm:p-2 rounded text-sm placeholder:text-zinc-500 sm:w-full"
                 defaultValue=""
               >
                 <option disabled value="">
@@ -85,16 +88,23 @@ export function CreateAdModal() {
               </select>
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="name">Seu nome (ou nickname)</label>
+              <label className="font-semibold sm:text-sm" htmlFor="name">
+                Seu nome (ou nickname)
+              </label>
               <Input
                 id="name"
                 name="name"
                 placeholder="Como te chamam dentro do game?"
               />
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="lg:grid lg:grid-cols-2 sm:flex sm:flex-col lg:gap-6 sm:gap-3">
               <div className="flex flex-col gap-2">
-                <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
+                <label
+                  className="font-semibold sm:text-sm"
+                  htmlFor="yearsPlaying"
+                >
+                  Joga há quantos anos?
+                </label>
                 <Input
                   id="yearsPlaying"
                   name="yearsPlaying"
@@ -103,14 +113,17 @@ export function CreateAdModal() {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="discord">Qual seu Discord?</label>
+                <label className="font-semibold sm:text-sm" htmlFor="discord">
+                  Qual seu Discord?
+                </label>
                 <Input id="discord" name="discord" placeholder="Usuário#0000" />
               </div>
             </div>
-            <div className="flex gap-6">
+            <div className="lg:grid lg:grid-cols-2 sm:flex sm:flex-col lg:gap-6 sm:gap-3">
               <div className="flex flex-col gap-2">
-                <label htmlFor="weekDays">Quando costuma jogar?</label>
-
+                <label className="font-semibold sm:text-sm" htmlFor="weekDays">
+                  Quando costuma jogar?
+                </label>
                 <ToggleGroup.Root
                   type="multiple"
                   className="grid grid-cols-4 gap-2"
@@ -120,7 +133,7 @@ export function CreateAdModal() {
                   <ToggleGroup.Item
                     value="0"
                     title="Domingo"
-                    className={`w-8 h-8 rounded  ${
+                    className={`lg:w-8 lg:h-8 rounded  ${
                       weekDays.includes("0") ? "bg-violet-500" : "bg-zinc-900"
                     }`}
                   >
@@ -129,7 +142,7 @@ export function CreateAdModal() {
                   <ToggleGroup.Item
                     value="1"
                     title="Segunda"
-                    className={`w-8 h-8 rounded  ${
+                    className={`lg:w-8 lg:h-8 rounded  ${
                       weekDays.includes("1") ? "bg-violet-500" : "bg-zinc-900"
                     }`}
                   >
@@ -138,7 +151,7 @@ export function CreateAdModal() {
                   <ToggleGroup.Item
                     value="2"
                     title="Terça"
-                    className={`w-8 h-8 rounded  ${
+                    className={`lg:w-8 lg:h-8 rounded  ${
                       weekDays.includes("2") ? "bg-violet-500" : "bg-zinc-900"
                     }`}
                   >
@@ -147,7 +160,7 @@ export function CreateAdModal() {
                   <ToggleGroup.Item
                     value="3"
                     title="Quarta"
-                    className={`w-8 h-8 rounded  ${
+                    className={`lg:w-8 lg:h-8 rounded  ${
                       weekDays.includes("3") ? "bg-violet-500" : "bg-zinc-900"
                     }`}
                   >
@@ -156,7 +169,7 @@ export function CreateAdModal() {
                   <ToggleGroup.Item
                     value="4"
                     title="Quinte"
-                    className={`w-8 h-8 rounded ${
+                    className={`lg:w-8 lg:h-8 rounded ${
                       weekDays.includes("4") ? "bg-violet-500" : "bg-zinc-900"
                     }`}
                   >
@@ -165,7 +178,7 @@ export function CreateAdModal() {
                   <ToggleGroup.Item
                     value="5"
                     title="Sexta"
-                    className={`w-8 h-8 rounded ${
+                    className={`lg:w-8 lg:h-8 rounded ${
                       weekDays.includes("5") ? "bg-violet-500" : "bg-zinc-900"
                     }`}
                   >
@@ -174,7 +187,7 @@ export function CreateAdModal() {
                   <ToggleGroup.Item
                     value="6"
                     title="Sábado"
-                    className={`w-8 h-8 rounded  ${
+                    className={`lg:w-8 lg:h-8 rounded  ${
                       weekDays.includes("6") ? "bg-violet-500" : "bg-zinc-900"
                     }`}
                   >
@@ -183,7 +196,9 @@ export function CreateAdModal() {
                 </ToggleGroup.Root>
               </div>
               <div className="flex flex-col gap-2 flex-1">
-                <label htmlFor="hourStart">Qual horário do dia?</label>
+                <label className="font-semibold sm:text-sm" htmlFor="hourStart">
+                  Qual horário do dia?
+                </label>
                 <div className="grid grid-cols-2 gap-2 ">
                   <Input
                     name="hourStart"
@@ -219,11 +234,11 @@ export function CreateAdModal() {
               Costumo me conectar no chat de voz
             </label>
             <footer className="mt-4 flex justify-end gap-4">
-              <Dialog.Close className="bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600">
+              <Dialog.Close className="bg-zinc-500 sm:px-3 sm:h-9 lg:px-5 lg:h-12 sm:text-sm rounded-md font-semibold hover:bg-zinc-600">
                 Cancelar
               </Dialog.Close>
               <button
-                className="bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600"
+                className="bg-violet-500 sm:px-3 sm:h-9 lg:px-5 lg:h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600 sm:text-sm"
                 type="submit"
               >
                 <GameController size={24} />

@@ -5,6 +5,12 @@ module.exports = {
     './index.html'
   ],
   theme: {
+    screens: {
+      'sm': '280px',
+      'md': '720px',
+      'lg': '1025px',
+      'xl': '2500px',
+    },
     fontFamily: {
       sans: ['Inter', 'sans-serif']
     },
