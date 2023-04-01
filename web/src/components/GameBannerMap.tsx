@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import axios from "axios";
 import { GameBanner } from "./GameBanner";
 import Slider from "react-slick";
@@ -7,7 +6,6 @@ import "../styles/slider.css";
 import { AdsBanner } from "./AdsBanner";
 import { BannerDiscord } from "./BannerDiscord";
 import { CreateAdGame } from "./CreateAdGame";
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 
 interface Game {
   id: string;
@@ -43,43 +41,18 @@ export function GamerBannerMap() {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1025,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          initialSlide: 0,
+          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 0,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 0,
-        },
-      },
-    ],
-  };
-  const settingsAds = {
-    dots: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -167,7 +140,7 @@ export function GamerBannerMap() {
         }}
         children={
           <>
-            <Slider {...settingsAds}>{Ads}</Slider>
+            <div className="flex gap-2 overflow-x-auto ">{Ads}</div>
             <BannerDiscord
               text={discordDuoSelect}
               active={active}

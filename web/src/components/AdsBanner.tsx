@@ -13,12 +13,12 @@ interface AdsBannerProps {
 
 export function AdsBanner(props: AdsBannerProps) {
   return (
-    <li className="bg-zinc-900 w-60 flex flex-col rounded-lg overflow-hidden p-4 gap-1">
+    <li className="bg-zinc-900 flex flex-col rounded-lg overflow-hidden p-4 gap-1">
       <TextADS span="Nome" strong={props.name} />
       <TextADS
         span="Tempo de jogo"
         strong={props.Years}
-        children={<strong> anos</strong>}
+        children={<strong>anos</strong>}
       />
       <TextADS
         span="Disponibilidade"

@@ -57,7 +57,7 @@ export function CreateAdModal() {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed">
-        <Dialog.Content className="fixed bg-[#2A2634] lg:py-8 lg:px-10 sm:p-4 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg lg:w-[480px] sm:w-full sm:max-w-md shadow-lg shadow-black/25 overflow-auto">
+        <Dialog.Content className="fixed bg-[#2A2634] lg:py-8 lg:px-10 sm:p-4 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg lg:w-[480px] sm:w-[90%] sm:max-w-md shadow-lg shadow-black/25 overflow-auto">
           <Dialog.Title className="lg:text-3xl sm:text-lg font-black ">
             Publique um anúncio
           </Dialog.Title>

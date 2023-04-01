@@ -11,9 +11,8 @@ import { CreateAdGame } from "../../components/CreateAdGame";
 import { useState } from "react";
 
 export function Home() {
-  const [gameId, setGameId] = useState("");
   return (
-    <div className="sm:max-w-[600px] lg:max-w-[1020px] xl:max-w-[1250px] max-w-[400px]  mx-auto flex flex-col items-center my-20 flex-nowrap">
+    <div className=" w-full mx-auto flex flex-col items-center my-20 flex-nowrap">
       <img src={logoImg} alt="" />
 
       <h1 className=" text-3xl md:text-6xl text-white font-black my-16">
