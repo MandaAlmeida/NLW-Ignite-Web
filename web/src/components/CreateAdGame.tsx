@@ -1,8 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { AdsBanner } from "./AdsBanner";
-import { BannerDiscord } from "./BannerDiscord";
 import { X } from "@phosphor-icons/react";
 
 interface AdsProps {
@@ -26,7 +21,7 @@ export function CreateAdGame(props: AdsProps) {
       <div
         className={
           props.activeAds
-            ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-3/4 h-[90%] bg-[#2A2634] flex flex-col items-center p-4 overflow-y-auto"
+            ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-3/4 h-[90%] bg-[#2A2634] flex flex-col items-center p-4 overflow-hidden"
             : "hidden"
         }
       >

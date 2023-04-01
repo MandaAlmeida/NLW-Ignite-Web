@@ -3,7 +3,7 @@ import { Dot, GameController } from "@phosphor-icons/react";
 
 interface AdsBannerProps {
   name: string;
-  Days: string;
+  Days: string[];
   useVoice: string;
   Years: number;
   hourStart: String;
@@ -13,17 +13,17 @@ interface AdsBannerProps {
 
 export function AdsBanner(props: AdsBannerProps) {
   return (
-    <li className="bg-zinc-900 flex flex-col rounded-lg overflow-hidden p-4 gap-1">
+    <li className="bg-zinc-900 flex min-w-[179px] flex-col justify-between rounded-lg p-4 gap-1">
       <TextADS span="Nome" strong={props.name} />
       <TextADS
         span="Tempo de jogo"
         strong={props.Years}
-        children={<strong>anos</strong>}
+        children={<strong>ano(s)</strong>}
       />
       <TextADS
         span="Disponibilidade"
         children={
-          <strong className="flex items-center">
+          <strong className="flex items-center gap-1">
             {props.Days}
             <Dot size={28} color="#636363" weight="bold" />
             {props.hourStart}-{props.hourEnd}

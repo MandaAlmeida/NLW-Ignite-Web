@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { GameBanner } from "./GameBanner";
 import Slider from "react-slick";
-import "../styles/slider.css";
+import "../styles/slider.scss";
 import { AdsBanner } from "./AdsBanner";
 import { BannerDiscord } from "./BannerDiscord";
 import { CreateAdGame } from "./CreateAdGame";
@@ -20,7 +20,7 @@ interface Game {
 interface AdProps {
   id: string;
   name: string;
-  weekDays: number;
+  weekDays: number[];
   useVoiceChannel: string | boolean;
   yearsPlaying: number;
   hourStart: String;
@@ -46,16 +46,36 @@ export function GamerBannerMap() {
     responsive: [
       {
         breakpoint: 1025,
+        settings: { initialSlide: 0, slidesToShow: 3, slidesToScroll: 3 },
+      },
+      {
+        breakpoint: 601,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          initialSlide: 0,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 481,
+        settings: { initialSlide: 0, slidesToShow: 1, slidesToScroll: 1 },
+      },
+    ],
+  };
+
+  const settingsAds = {
+    dots: false,
+    arrow: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1025,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          arrow: false,
         },
       },
       {
@@ -63,14 +83,15 @@ export function GamerBannerMap() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrow: false,
         },
       },
     ],
   };
 
-  function getDayOfWeek(dayNumber: number) {
-    const daysOfWeek = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
-    return daysOfWeek[dayNumber];
+  function getDayOfWeek(dayNumbers: number[]) {
+    const daysOfWeek = ["Dom ", "Seg ", "Ter ", "Qua ", "Qui ", "Sex ", "Sáb "];
+    return dayNumbers.map((dayNumber) => daysOfWeek[dayNumber]);
   }
 
   async function getDiscordUser(id: string) {
@@ -129,7 +150,9 @@ export function GamerBannerMap() {
 
   return (
     <>
-      <Slider {...settings}>{Games}</Slider>
+      <Slider className="slider-game" {...settings}>
+        {Games}
+      </Slider>
 
       <CreateAdGame
         img={img}
@@ -140,7 +163,10 @@ export function GamerBannerMap() {
         }}
         children={
           <>
-            <div className="flex gap-2 overflow-x-auto ">{Ads}</div>
+            <Slider className="slider-ads" {...settingsAds}>
+              {Ads}
+            </Slider>
+
             <BannerDiscord
               text={discordDuoSelect}
               active={active}
