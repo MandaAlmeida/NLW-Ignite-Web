@@ -1,16 +1,11 @@
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { Game } from './Pages/Game';
-import { Home } from './Pages/Home';
+import { createBrowserRouter } from "react-router-dom";
+import App from "./App";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+]);
 
-export function Nav(){
-    return (
-        <div>
-            <Router>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                </Routes>
-            </Router>
-        </div>
-    )
-}
+export default router;

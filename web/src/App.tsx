@@ -1,15 +1,13 @@
-import { Nav } from "./routes"
-
+import { Outlet } from "react-router-dom";
+import { Home } from "./Pages/Home";
 
 function App() {
-   
- 
- return (
+  return (
     <div>
-        <Nav />
+      <Home />
+      <Outlet />
     </div>
-
- )
+  );
 }
 
-export default App
+export default App;

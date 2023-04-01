@@ -2,7 +2,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 
-import { Check, GameController } from "phosphor-react";
+import { Check, GameController } from "@phosphor-icons/react";
 import { Input } from "./Form/input";
 import { useEffect, useState, FormEvent } from "react";
 import axios from "axios";
@@ -57,7 +57,7 @@ export function CreateAdModal() {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed">
-        <Dialog.Content className="fixed bg-[#2A2634] lg:py-8 lg:px-10 sm:p-4 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg lg:w-[480px] sm:w-full shadow-lg shadow-black/25 overflow-auto">
+        <Dialog.Content className="fixed bg-[#2A2634] lg:py-8 lg:px-10 sm:p-4 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg lg:w-[480px] sm:w-full sm:max-w-md shadow-lg shadow-black/25 overflow-auto">
           <Dialog.Title className="lg:text-3xl sm:text-lg font-black ">
             Publique um anúncio
           </Dialog.Title>
@@ -238,11 +238,11 @@ export function CreateAdModal() {
                 Cancelar
               </Dialog.Close>
               <button
-                className="bg-violet-500 sm:px-3 sm:h-9 lg:px-5 lg:h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600 sm:text-sm"
+                className="bg-violet-500 sm:px-3 sm:h-9 lg:px-5 lg:h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600 sm:text-sm text-white justify-center"
                 type="submit"
               >
                 <GameController size={24} />
-                Encontrar duo
+                Encontre seu Duo
               </button>
             </footer>
           </form>

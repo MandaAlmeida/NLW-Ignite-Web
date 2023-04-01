@@ -1,0 +1,29 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.slick-slider {
+  width: 100%;
+}
+
+.slick-track {
+  display: flex;
+  gap: 24px;
+}
+
+.slick-next {
+  background: url("../assets/CaretRight.svg") center center no-repeat !important;
+}
+.slick-prev {
+  background: url("../assets/CaretLeft.svg") center center no-repeat !important;
+}
+
+.slick-arrow {
+  opacity: 0.4;
+}
+
+.slick-arrow:hover {
+  opacity: 100;
+}
+.slick-arrow::before {
+  display: none;
+}
